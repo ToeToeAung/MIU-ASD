@@ -1,0 +1,22 @@
+package webshop;
+
+public class Category implements ProductCatalogComponent {
+	 private String name;
+	    private List<CatalogComponent> children = new ArrayList<>();
+
+	    public Category(String name) {
+	        this.name = name;
+	    }
+
+	    public void add(ProductCatalogComponent component) {
+	        children.add(component);
+	    }
+
+	    @Override
+	    public void print() {
+	        System.out.println("Category: " + name);
+	        for (CatalogComponent child : children) {
+	            child.print();
+	        }
+	    }
+}

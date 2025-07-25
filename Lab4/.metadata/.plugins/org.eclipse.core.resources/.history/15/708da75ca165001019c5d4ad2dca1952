@@ -1,0 +1,27 @@
+package webshop;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Category book = new Category("Book");
+		Category grocery = new Category("Grocery");
+        
+        Category fiction = new Category("Fiction");
+        Category electronics = new Category("Fiction");
+        
+        fiction.add(book);
+        electronics.add(grocery);
+
+        Product clothing = new Product("Clothing");
+        Category fashion = new Category("Fashion");
+        fashion.add(clothing);
+
+        Category catalog = new Category("Product Catalog");
+        catalog.add(electronics);
+        catalog.add(fashion);
+
+        catalog.print();
+	}
+
+}

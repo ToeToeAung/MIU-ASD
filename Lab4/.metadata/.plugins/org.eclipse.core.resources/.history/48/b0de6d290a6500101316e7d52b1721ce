@@ -1,0 +1,12 @@
+package webshop;
+
+public interface ProductCatalogComponent {
+	protected String name;
+
+	public ProductCatalogComponent(String name) {
+		this.name = name;
+	}
+	
+	public abstract void print();
+
+}

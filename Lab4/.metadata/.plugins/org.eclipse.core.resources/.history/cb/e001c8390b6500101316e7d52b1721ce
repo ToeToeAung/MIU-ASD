@@ -1,0 +1,14 @@
+package webshop;
+
+public class Product  implements ProductCatalogComponent{
+	  private String name;
+
+	    public Product(String name) {
+	        this.name = name;
+	    }
+
+	    @Override
+	    public void print() {
+	    	System.out.println("Product: " + this.name + ", price: " + getPrice());
+	    }
+}

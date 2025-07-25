@@ -1,0 +1,39 @@
+package webshop;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Category shop = new Category("Shop");
+		Category book = new Category("Book");
+		Category grocery = new Category("Grocery");
+        
+        Category milk = new Category("Milk Products");
+        Category vege = new Category("Vegetables Products");
+        
+			
+		Product lord = new Product("Lord of the Rings");
+		lord.setPrice(49.99);
+		
+		Product whipping = new Product("Whipping cream");
+		whipping.setPrice(4.59);
+		
+		Product chicken = new Product("Chicken wings");
+		chicken.setPrice(5.79);
+		
+		shop.addProductComponent(book);		
+	    shop.addProductComponent(grocery);
+		
+	    book.addProductComponent(lord);
+				
+	    grocery.addProductComponent(milk);
+	    grocery.addProductComponent(vege);
+		
+		milk.addProductComponent(whipping);
+		vege.addProductComponent(chicken);
+		
+		shop.print();
+
+
+	}
+
+}

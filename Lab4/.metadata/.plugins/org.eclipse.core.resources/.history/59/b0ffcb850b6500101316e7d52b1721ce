@@ -1,0 +1,24 @@
+package webshop;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Product book = new Product("Book");
+        Product phone = new Product("Smartphone");
+        Category fiction = new Category("Fiction");
+        fiction.add(book);
+        electronics.add(phone);
+
+        Product clothing = new Product("Clothing");
+        Category fashion = new Category("Fashion");
+        fashion.add(clothing);
+
+        Category catalog = new Category("Product Catalog");
+        catalog.add(electronics);
+        catalog.add(fashion);
+
+        catalog.print();
+	}
+
+}
