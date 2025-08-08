@@ -1,0 +1,27 @@
+package CameraApp;
+
+public class Application {
+
+	public static void main(String[] args) {
+		String[] vecList = { "ABC 1234", 
+				"XYZ 1234", 
+				"XYZ 0987", 
+				"ABC 6543", 
+				"XZY 5678" 
+		};
+		String[] camIds = { "cam123", "cam234" };
+		CameraRecord recd1 = new CameraRecord(camIds[0], vecList[0], 54);
+		CameraRecord recd2 = new CameraRecord(camIds[1], vecList[1], 58);
+		CameraRecord recd3 = new CameraRecord(camIds[0], vecList[2], 45);
+		CameraRecord recd4 = new CameraRecord(camIds[1], vecList[3], 87);
+		CameraRecord recd5 = new CameraRecord(camIds[0], vecList[4], 64);
+
+		recd1.checkStatus();
+		recd2.checkStatus();
+		recd3.checkStatus();
+		recd4.checkStatus();
+		recd5.checkStatus();
+
+	}
+
+}

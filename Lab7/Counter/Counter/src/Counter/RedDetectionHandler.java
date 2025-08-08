@@ -1,0 +1,21 @@
+package Counter;
+
+
+public class RedDetectionHandler extends DetectionHandler {
+	
+	public RedDetectionHandler(Counter counter) {
+		super(counter);
+		
+	}
+
+	@Override
+	void detect() {
+		int c = counter.getCount();
+		if ((c < 10 & c % 2 == 0) | c == 12 | c == 13) {
+			System.out.println("Red: even, less than 10, or equal 12 or 13");
+		} else {
+			DetectionHandler green = new GreenDetectionHandler(counter);
+			green.detect();
+		}
+	}
+}

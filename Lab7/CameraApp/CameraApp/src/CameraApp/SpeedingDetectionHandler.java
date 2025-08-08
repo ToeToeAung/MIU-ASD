@@ -1,0 +1,17 @@
+package CameraApp;
+
+public class SpeedingDetectionHandler extends DetectionHandler {
+
+	public SpeedingDetectionHandler(CameraRecord record) {
+		super(record);
+	}
+
+	@Override
+	void detect() {
+		if (this.record.speed >= 65) {
+			System.out.println("Speeding detected!");
+		} else {
+			System.out.println("Normal");
+		}
+	}
+}

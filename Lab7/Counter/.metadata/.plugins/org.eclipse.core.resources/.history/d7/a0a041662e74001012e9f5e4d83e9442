@@ -1,0 +1,56 @@
+package Counter;
+
+import java.util.*;
+
+public class Counter {
+
+	private int count = 0;
+
+	List<ICounterObserver> observerList;	
+	ICounterState state;
+	DetectionHandler detect;
+	Logger logger;
+	
+
+	public Counter() {
+		observerList = new ArrayList<ICounterObserver>();
+		this.state = new SingleDigitState(this, count, true);
+		this.detect = new RedDetect(this);
+	}
+
+	public void registerObserver(ICounterObserver o) {
+		this.observerList.add(o);
+	}
+	
+	public List<ICounterObserver> getObservers() {
+		return this.observerList;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void increment() {
+		count++;
+		this.state.setFlag(true);
+		this.state.setPoints(count);
+		this.state.update();
+		this.observerList.stream().forEach(e -> e.update(count));
+	}
+
+	public void decrement() {
+		count--;
+		this.state.setFlag(false);
+		this.state.setPoints(count);
+		this.state.update();
+		this.observerList.stream().forEach(e -> e.update(count));
+	}
+	
+	public void changeState(ICounterState s) {
+		this.state = s;
+	}
+	
+	public void setCount(int count) {
+		this.count = count;
+	}
+}
