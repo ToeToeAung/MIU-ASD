@@ -18,7 +18,7 @@ public class SingleDigitState implements ICounterState {
 		} else {
 			this.points--;
 		}
-		System.out.println("SingleState updated points: " + this.points);
+		System.out.println("Single Digit State updated points: " + this.points);
 		
 		if (this.points <= 0) {
 			this.points = 0;

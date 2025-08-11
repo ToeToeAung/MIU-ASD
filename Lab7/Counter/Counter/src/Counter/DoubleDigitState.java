@@ -16,7 +16,7 @@ public class DoubleDigitState implements ICounterState {
 		} else {
 			this.points -= 2;
 		}
-		System.out.println("DoubleState Received points: " + this.points);
+		System.out.println("Double Digit State Received points: " + this.points);
 
 		if (this.points < 10) {
 			c.changeState(new SingleDigitState(c, this.points, incDecFlag));

@@ -17,7 +17,7 @@ public class TripleDigitState implements ICounterState {
 		} else {
 			this.points -= 3;
 		}
-		System.out.println("TripleState Received points: " + this.points);
+		System.out.println("Triple Digit State Received points: " + this.points);
 		
 		if (this.points < 100) {
 			c.changeState(new DoubleDigitState(c, this.points, incDecFlag));
