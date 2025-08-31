@@ -1,5 +1,0 @@
-package CameraApp;
-
-abstract class Handler {
-	abstract void detect();
-}
